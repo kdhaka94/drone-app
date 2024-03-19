@@ -1,8 +1,10 @@
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-const AddressInputScreen = ({ navigation }) => {
+const AddressInputScreen = () => {
   const [droneIP, setDroneIP] = useState('');
+  const router = useRouter();
 
   const handleDroneIPChange = (text) => {
     setDroneIP(text);
@@ -10,7 +12,7 @@ const AddressInputScreen = ({ navigation }) => {
 
   const handleSubmit = () => {
     // Validate the IP address format if needed
-    navigation.navigate('ControlScreen', { droneIP });
+    router.navigate(`/control?ip=${droneIP}`);
   };
 
   return (

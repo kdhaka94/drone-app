@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, PanResponder } from 'react-native';
+import { View, PanResponder, StyleSheet } from 'react-native';
 
 const Joystick = ({ onMove }) => {
   const panResponder = React.useMemo(
